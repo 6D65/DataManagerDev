@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleTestProject", "Sample
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataManager", "DataManager\DataManager.csproj", "{05BD8246-3C83-4C4D-9551-137163EB244B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiSampleService", "ApiSampleService\ApiSampleService.csproj", "{F1156943-D8AD-470A-8359-3EF776836C15}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{05BD8246-3C83-4C4D-9551-137163EB244B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05BD8246-3C83-4C4D-9551-137163EB244B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05BD8246-3C83-4C4D-9551-137163EB244B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1156943-D8AD-470A-8359-3EF776836C15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1156943-D8AD-470A-8359-3EF776836C15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1156943-D8AD-470A-8359-3EF776836C15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1156943-D8AD-470A-8359-3EF776836C15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
