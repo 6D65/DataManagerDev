@@ -37,7 +37,7 @@ namespace ApiSampleService
             Get["/companies/{companyId:int}"] = parameters =>
             {
                 company.Id = parameters.companyId;
-                return Response.AsJson(JsonConvert.SerializeObject(company));
+                return Response.AsJson(company);
             };
         }
     }
