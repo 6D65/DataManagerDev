@@ -1,4 +1,5 @@
 ﻿using Nancy;
+using Nancy.Authentication.Basic;
 using Nancy.Authentication.Stateless;
 using Nancy.Authentication.Token;
 using Nancy.Bootstrapper;
@@ -22,7 +23,7 @@ namespace ApiSampleService
             HostConfiguration hostConfigs = new HostConfiguration();
             hostConfigs.UrlReservations.CreateAutomatically = true;
 
-            using (var host = new NancyHost(uri, new ApiKeyAuthBoostrapper(), hostConfigs))
+            using (var host = new NancyHost(uri, new BasicAuthBootstrapper(), hostConfigs))
             {
                 host.Start();
 
@@ -40,7 +41,7 @@ namespace ApiSampleService
             }
         }
 
-        public class ApiKeyAuthBoostrapper : DefaultNancyBootstrapper
+        public class ApiKeyAuthBootstrapper : DefaultNancyBootstrapper
         {
             protected override void RequestStartup(TinyIoCContainer container, IPipelines pipelines, NancyContext context)
             {
@@ -59,6 +60,18 @@ namespace ApiSampleService
 
                 AllowAccessToConsumingSite(pipelines);
                 StatelessAuthentication.Enable(pipelines, config);
+            }
+        }
+
+        public class BasicAuthBootstrapper : DefaultNancyBootstrapper
+        {
+            protected override void ApplicationStartup(TinyIoCContainer container, IPipelines pipelines)
+            {
+                base.ApplicationStartup(container, pipelines);
+
+                pipelines.EnableBasicAuthentication(
+                    new BasicAuthenticationConfiguration(
+                        container.Resolve<AppUserValidator>(), "AdminRealm"));
             }
         }
 
@@ -87,6 +100,18 @@ namespace ApiSampleService
         {
             public IEnumerable<string> Claims { get; set; }
             public string UserName { get; set; }
+        }
+
+        public class AppUserValidator : IUserValidator
+        {
+            public IUserIdentity Validate(string username, string password)
+            {
+                if (username == "admin" && password == "admin")
+                {
+                    return new AppUserIndentity { UserName = "Administator", Claims = new List<string> { "Everything" } };
+                }
+                return null;
+            }
         }
     }
 }

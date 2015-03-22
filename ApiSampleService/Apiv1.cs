@@ -11,10 +11,11 @@ namespace ApiSampleService.Api.v1
 {
     public class CompaniesApi : NancyModule
     {
-        public CompaniesApi()
+        public CompaniesApi() : base("/api/v1")
         {
-            Get["/api/v1/companies/{companyId:int}"] = parameters =>
+            Get["/companies/{companyId:int}"] = parameters =>
             {
+                this.RequiresAuthentication();
                 Company company = new Company();
                 company.Id = parameters.companyId;
                 company.Name = string.Format("Company {0} Name", parameters.companyId);
@@ -24,7 +25,7 @@ namespace ApiSampleService.Api.v1
                 return Response.AsJson(result);
             };
 
-            Get["/api/v1/companies"] = parameters =>
+            Get["/companies"] = parameters =>
             {
                 List<object> companiesResult = new List<object>();
                 for (int i = 0; i < 100; i++)
@@ -39,11 +40,26 @@ namespace ApiSampleService.Api.v1
                 return Response.AsJson(result);
             };
 
-            Post["/api/v1/companies"] = _ =>
+            Post["/companies"] = _ =>
             { 
                 this.RequiresAuthentication();
+                return "Welcome";
             };
 
+            Get["/companies/products/{productId:int}"] = parameters => { return new { Result = "Eveything's good" }; };
+        }
+    }
+
+    public class ProductsApi : NancyModule
+    {
+        public ProductsApi()
+            : base("/api/v1")
+        {
+            Get["/products/{productId:int}"] = parameters => { return new { Result = "Eveything's good" }; };
+            //Get["/products/{productId:int}"] = parameters => { return new {Result = "Eveything's good"} };
+            //Get["/products/{productId:int}"] = parameters => { return new {Result = "Eveything's good"} };
+            //Get["/products/{productId:int}"] = parameters => { return new {Result = "Eveything's good"} };
+            //Get["/products/{productId:int}"] = parameters => { return new {Result = "Eveything's good"} };
         }
     }
 
