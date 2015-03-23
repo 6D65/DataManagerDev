@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestMonkeys
+namespace ApiSchema.v1
 {
-    public class ApiClient
+    class Client
     {
     }
 }

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E170D579-B20C-4A62-A893-037E8FAF1AA0}</ProjectGuid>
+    <ProjectGuid>{66FBC1A2-6441-42A8-8D9A-6351C86F98E0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ApiClient</RootNamespace>
-    <AssemblyName>ApiClient</AssemblyName>
+    <RootNamespace>ApiSchema</RootNamespace>
+    <AssemblyName>ApiSchema</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,15 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Refit">
-      <HintPath>..\packages\refit.2.2.1\lib\Net45\Refit.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,15 +39,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IApi_v1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RefitStubs.cs" />
+    <Compile Include="v1\Client.cs" />
+    <Compile Include="v1\Company.cs" />
+    <Compile Include="v1\Product.cs" />
+    <Compile Include="v2\Client.cs" />
+    <Compile Include="v2\Company.cs" />
+    <Compile Include="v2\Product.cs" />
+    <Compile Include="v3\Client.cs" />
+    <Compile Include="v3\Company.cs" />
+    <Compile Include="v3\Product.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\refit.2.2.1\build\refit.targets" Condition="Exists('..\packages\refit.2.2.1\build\refit.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -55,6 +55,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ApiClient\ApiClient.csproj">
+      <Project>{e170d579-b20c-4a62-a893-037e8faf1aa0}</Project>
+      <Name>ApiClient</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataManagerClient\DataManagerClient.csproj">
       <Project>{6ee1ba2c-8e60-4ede-9ee9-d4506c3b7c5c}</Project>
       <Name>DataManagerClient</Name>

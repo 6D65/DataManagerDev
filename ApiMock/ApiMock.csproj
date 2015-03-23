@@ -59,14 +59,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Apiv1.cs" />
+    <Compile Include="common\ArrayResult.cs" />
+    <Compile Include="common\AuthModule.cs" />
+    <Compile Include="common\BasicIdentity.cs" />
+    <Compile Include="common\SingleResult.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="v1\ClientsApi.cs" />
+    <Compile Include="v1\CompaniesApi.cs" />
+    <Compile Include="v1\ProductsApi.cs" />
+    <Compile Include="v2\ClientsApi.cs" />
+    <Compile Include="v2\CompaniesApi.cs" />
+    <Compile Include="v2\ProductsApi.cs" />
+    <Compile Include="v3\ClientsApi.cs" />
+    <Compile Include="v3\CompanyApi.cs" />
+    <Compile Include="v3\ProductsApi.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ApiSchema\ApiSchema.csproj">
+      <Project>{66fbc1a2-6441-42a8-8d9a-6351c86f98e0}</Project>
+      <Name>ApiSchema</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
