@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace ApiSchema.v1
 {
-    class Product
+    public class Product
     {
+        public string Name { get; set; }
+        public DateTime PublishedDate { get; set; }
+        public int Id { get; set; }
     }
 }
