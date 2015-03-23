@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace ApiSampleService.v2
 {
-    class CompaniesApi
+    public class CompaniesApi : ApiSampleService.v1.CompaniesApi
     {
+        public CompaniesApi() : base("/api/v2") {}
+        public CompaniesApi(string versionString) : base(versionString) {}
     }
 }

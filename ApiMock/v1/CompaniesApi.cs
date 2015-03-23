@@ -1,4 +1,5 @@
-﻿using ApiSchema.v1;
+﻿using ApiSampleService.common;
+using ApiSchema.v1;
 using Nancy;
 using Nancy.Security;
 using System;
@@ -11,8 +12,10 @@ namespace ApiSampleService.v1
 {
     public class CompaniesApi : NancyModule
     {
-        public CompaniesApi()
-            : base("/api/v1")
+        public CompaniesApi() : this("/api/v1") {}
+
+        public CompaniesApi(string versionString)
+            : base(versionString)
         {
             Get["/companies/{companyId:int}"] = parameters =>
             {

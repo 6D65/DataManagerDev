@@ -11,10 +11,10 @@ namespace ApiSampleService.v1
     {
         public ClientsApi() : base("/api/v1")
         {
-            Get["/clients/{clientId:int}"] = parameters => { return new { Result = "Clients"} };
-            Post["/clients/{clientId:int}"] = parameters => { return new { Result = "Clients"} };
-            Put["/clients/{clientId:int}"] = parameters => { return new { Result = "Clients"} };
-            Delete["/clients/{clientId:int}"] = parameters => { return new { Result = "Clients"} };
+            Get["/clients/{clientId:int}"] = parameters => { return new { Result = "Clients"}; };
+            Post["/clients/{clientId:int}"] = parameters => { return new { Result = "Clients"}; };
+            Put["/clients/{clientId:int}"] = parameters => { return new { Result = "Clients"}; };
+            Delete["/clients/{clientId:int}"] = parameters => { return new { Result = "Clients" }; };
         }
     }
 }
