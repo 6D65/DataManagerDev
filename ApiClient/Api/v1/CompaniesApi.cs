@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiClient.v1
+namespace ApiClient.Api.v1
 {
     public interface CompaniesApi
     {

@@ -7,8 +7,8 @@
     <ProjectGuid>{F1156943-D8AD-470A-8359-3EF776836C15}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ApiSampleService</RootNamespace>
-    <AssemblyName>ApiSampleService</AssemblyName>
+    <RootNamespace>ApiMock</RootNamespace>
+    <AssemblyName>ApiMock</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

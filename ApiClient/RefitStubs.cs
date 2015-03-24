@@ -29,7 +29,7 @@ namespace RefitInternalGenerated
     }
 }
 
-namespace ApiClient.v1
+namespace ApiClient.Api.v1
 {
     using RefitInternalGenerated;
 
@@ -60,7 +60,7 @@ namespace ApiClient.v1
     }
 }
 
-namespace ApiClient.v1
+namespace ApiClient.Api.v1
 {
     using RefitInternalGenerated;
 

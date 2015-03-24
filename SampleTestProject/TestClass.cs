@@ -3,7 +3,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestMonkeys.DataManager;
 using System.Threading.Tasks;
 using Refit;
-using ApiClient.v1;
+using ApiClient;
+using ApiClient.Api.v1;
 
 namespace SampleTestProject
 {
@@ -18,6 +19,17 @@ namespace SampleTestProject
             var product = await mockApi.GetAllProducts();
 
             Task.WaitAll();
+        }
+
+        [TestMethod]
+        public async Task ApiClientTest()
+        { 
+            Api<v1> api = new Api<v1>();
+            //api.Products.CreateProducts();
+
+            Task.WaitAll();
+
+            //Api<v1>.Products.GetAllProducts();
         }
     }
 }
