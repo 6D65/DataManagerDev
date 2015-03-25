@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiClient.Api.v1
+namespace ApiClient.ApiVersions
 {
-    public class v1 : ApiVersion
+    public class ApiVersion
     {
     }
 }

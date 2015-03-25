@@ -4,7 +4,7 @@ using TestMonkeys.DataManager;
 using System.Threading.Tasks;
 using Refit;
 using ApiClient;
-using ApiClient.Api.v1;
+using ApiClient.ApiVersions.v1;
 
 namespace SampleTestProject
 {
@@ -14,22 +14,16 @@ namespace SampleTestProject
         [TestMethod]
         public async Task FirstTestMethod()
         {
-            var mockApi = RestService.For<IMockApi>("http://localhost:8000");
+            Api api = new Api("http://localhost:8000");
 
-            var product = await mockApi.GetAllProducts();
+            var products = await api.v1.Products.GetAllProducts();
 
-            Task.WaitAll();
+            //Task.WaitAll();
         }
 
         [TestMethod]
         public async Task ApiClientTest()
         { 
-            Api<v1> api = new Api<v1>();
-            //api.Products.CreateProducts();
-
-            Task.WaitAll();
-
-            //Api<v1>.Products.GetAllProducts();
         }
     }
 }

@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiClient.Api.v1
+namespace ApiClient.ApiVersions.v1
 {
-    public interface IMockApi
+    public interface IProductsApi
     {
         [Get("/api/v1/products/{productId}")]
         Task<Product> GetProduct(int productId);

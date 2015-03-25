@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiClient.Api.v1
+namespace ApiClient.ApiVersions.v1
 {
-    public interface CompaniesApi
+    public interface ICompaniesApi
     {
         [Get("/api/v1/companies/{companyId}")]
         Task<Company> GetCompany(int companyId);
