@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api.cs" />
-    <Compile Include="ApiClass.cs" />
     <Compile Include="ApiVersions\ApiVersion.cs" />
     <Compile Include="ApiVersions\v1\v1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

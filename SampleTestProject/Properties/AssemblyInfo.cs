@@ -34,3 +34,5 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+
+//[assembly: TypeForwardedFrom("Refit.ApiException, Version=2.2.1.0, Culture=Neutral, PublicKeyToken=31bf3856ad364e35")]

@@ -2,9 +2,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestMonkeys.DataManager;
 using System.Threading.Tasks;
-using Refit;
 using ApiClient;
-using ApiClient.ApiVersions.v1;
+using System.Runtime.CompilerServices;
+
 
 namespace SampleTestProject
 {
@@ -14,16 +14,17 @@ namespace SampleTestProject
         [TestMethod]
         public async Task FirstTestMethod()
         {
-            Api api = new Api("http://localhost:8000");
+            var products = await TestApi.v1.Products.GetAllProducts();
 
-            var products = await api.v1.Products.GetAllProducts();
-
+            Assert.AreEqual(20, products.Count, "The Get Products command should return 20 items.");
             //Task.WaitAll();
         }
 
+        //[TestMethod, ExpectedException(typeof(Refit.ApiException))]
         [TestMethod]
         public async Task ApiClientTest()
-        { 
+        {
+            var companies = await TestApi.v1.Companies.GetCompany(1);
         }
     }
 }

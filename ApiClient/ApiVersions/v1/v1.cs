@@ -16,5 +16,6 @@ namespace ApiClient.ApiVersions.v1
         }
 
         public IProductsApi Products { get { return RestService.For<IProductsApi>(_apiHost); } }
+        public ICompaniesApi Companies { get { return RestService.For<ICompaniesApi>(_apiHost); } }
     }
 }
