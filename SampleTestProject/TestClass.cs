@@ -4,6 +4,7 @@ using TestMonkeys.DataManager;
 using System.Threading.Tasks;
 using ApiClient;
 using System.Runtime.CompilerServices;
+using ApiSchema.v1;
 
 
 namespace SampleTestProject
@@ -18,6 +19,8 @@ namespace SampleTestProject
 
             Assert.AreEqual(20, products.Count, "The Get Products command should return 20 items.");
             //Task.WaitAll();
+
+            DataManagerClient dm = new DataManagerClient();
         }
 
         //[TestMethod, ExpectedException(typeof(Refit.ApiException))]

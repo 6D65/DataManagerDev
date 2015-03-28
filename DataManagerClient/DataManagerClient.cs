@@ -8,5 +8,10 @@ namespace TestMonkeys.DataManager
 {
     public class DataManagerClient
     {
+        string _dbName;
+
+        public DataManagerClient(){
+            _dbName = "DataManager";
+        }
     }
 }
