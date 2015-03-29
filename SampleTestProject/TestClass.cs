@@ -20,7 +20,8 @@ namespace SampleTestProject
             Assert.AreEqual(20, products.Count, "The Get Products command should return 20 items.");
             //Task.WaitAll();
 
-            DataManagerClient dm = new DataManagerClient();
+            DataManagerClient dm = new DataManagerClient("tcp://127.0.0.1:5088");
+            string response =  dm.SendMessage("Hello from the client");
         }
 
         //[TestMethod, ExpectedException(typeof(Refit.ApiException))]
