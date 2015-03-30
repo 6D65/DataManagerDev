@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ApiSchema.v1
 {
-    public class Company
+    public class Company : ApiSchemaObject
     {
         public string Name { get; set; }
         public string Address { get; set; }

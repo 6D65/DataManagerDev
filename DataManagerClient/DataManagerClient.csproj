@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CapnProto-net">
+      <HintPath>..\packages\CapnProto-net.0.0.8\lib\net45\CapnProto-net.dll</HintPath>
+    </Reference>
     <Reference Include="NNanomsg">
       <HintPath>..\Dependencies\NNanomsg.dll</HintPath>
     </Reference>
@@ -52,6 +55,9 @@
       <Project>{66fbc1a2-6441-42a8-8d9a-6351c86f98e0}</Project>
       <Name>ApiSchema</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
