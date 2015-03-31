@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiSchemaObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="v1\Client.cs" />
     <Compile Include="v1\Company.cs" />

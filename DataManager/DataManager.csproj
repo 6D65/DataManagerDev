@@ -40,10 +40,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataManager.cs" />
+    <Compile Include="Functionality\IFuntionality.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Schema\Company.capnp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ApiSchema\ApiSchema.csproj">
+      <Project>{66fbc1a2-6441-42a8-8d9a-6351c86f98e0}</Project>
+      <Name>ApiSchema</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
