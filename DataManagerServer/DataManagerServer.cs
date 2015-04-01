@@ -9,6 +9,7 @@ using Akavache;
 using ApiSchema.v1;
 using NNanomsg.Protocols;
 using NNanomsg;
+using Configuration;
 
 namespace TestMonkeys.DataManager
 {
@@ -18,10 +19,9 @@ namespace TestMonkeys.DataManager
 
         static void Main(string[] args)
         {
-            const string socketAddress = "tcp://127.0.0.1:5088";
             using (var rep = new ReplySocket())
             {
-                rep.Bind(socketAddress);
+                rep.Bind(Config.Instance.DataManagerServer);
 
                 var listener = new NanomsgListener();
                 listener.AddSocket(rep);

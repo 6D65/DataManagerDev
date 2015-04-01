@@ -9,15 +9,12 @@ namespace TestMonkeys.DataManager
 {
     public class DataManagerClient
     {
-        string _dbName;
         string _url;
 
         public DataManagerClient(){
-            _dbName = "DataManager";
         }
 
         public DataManagerClient(string url) : base() {
-            _dbName = "DataManager";
             _url = url;
         }
 

@@ -65,6 +65,10 @@
       <Project>{66fbc1a2-6441-42a8-8d9a-6351c86f98e0}</Project>
       <Name>ApiSchema</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Config\Config.csproj">
+      <Project>{d3f5eba4-f2fb-4d6a-9f50-33c9366dac9a}</Project>
+      <Name>Config</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataManagerClient\DataManagerClient.csproj">
       <Project>{6ee1ba2c-8e60-4ede-9ee9-d4506c3b7c5c}</Project>
       <Name>DataManagerClient</Name>

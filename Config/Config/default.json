@@ -1,0 +1,4 @@
+{
+  "DataManagerClient" : "tcp://127.0.0.1:5088",
+  "DataManagerServer" : "tcp://127.0.0.1:5088"
+}

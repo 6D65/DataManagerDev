@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using ApiClient;
 using System.Runtime.CompilerServices;
 using ApiSchema.v1;
+using Configuration;
 
 
 namespace SampleTestProject
@@ -20,7 +21,7 @@ namespace SampleTestProject
             Assert.AreEqual(20, products.Count, "The Get Products command should return 20 items.");
             //Task.WaitAll();
 
-            DataManagerClient dm = new DataManagerClient("tcp://127.0.0.1:5088");
+            DataManagerClient dm = new DataManagerClient(Config.Instance.DataManagerClient);
             string response =  dm.SendMessage("Hello from the client");
         }
 

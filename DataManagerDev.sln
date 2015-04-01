@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiSchema", "ApiSchema\ApiS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiMock", "ApiMock\ApiMock.csproj", "{F1156943-D8AD-470A-8359-3EF776836C15}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Config", "Config\Config.csproj", "{D3F5EBA4-F2FB-4D6A-9F50-33C9366DAC9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{F1156943-D8AD-470A-8359-3EF776836C15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1156943-D8AD-470A-8359-3EF776836C15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1156943-D8AD-470A-8359-3EF776836C15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3F5EBA4-F2FB-4D6A-9F50-33C9366DAC9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3F5EBA4-F2FB-4D6A-9F50-33C9366DAC9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3F5EBA4-F2FB-4D6A-9F50-33C9366DAC9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3F5EBA4-F2FB-4D6A-9F50-33C9366DAC9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

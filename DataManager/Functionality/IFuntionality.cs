@@ -9,7 +9,5 @@ namespace DataManager.Functionality
 {
     public interface IFuntionality
     {
-        public T CreateObject<T>() where T: ApiSchemaObject;
-        public T DeleteObject<T>() where T: ApiSchemaObject;
     }
 }
