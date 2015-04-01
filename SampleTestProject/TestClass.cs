@@ -6,6 +6,7 @@ using ApiClient;
 using System.Runtime.CompilerServices;
 using ApiSchema.v1;
 using Configuration;
+using ApiSchema;
 
 
 namespace SampleTestProject
@@ -22,7 +23,7 @@ namespace SampleTestProject
             //Task.WaitAll();
 
             DataManagerClient dm = new DataManagerClient(Config.Instance.DataManagerClient);
-            string response =  dm.SendMessage("Hello from the client");
+            ApiObject response =  dm.SendMessage("Hello from the client");
         }
 
         //[TestMethod, ExpectedException(typeof(Refit.ApiException))]

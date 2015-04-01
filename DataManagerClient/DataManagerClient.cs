@@ -1,4 +1,5 @@
-﻿using NNanomsg.Protocols;
+﻿using ApiSchema.v1;
+using NNanomsg.Protocols;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,14 +19,15 @@ namespace TestMonkeys.DataManager
             _url = url;
         }
 
-        public string SendMessage(string message)
+        public ApiSchema.ApiObject SendMessage(string message)
         { 
             using(var s = new RequestSocket())
             {
                 s.Connect(_url);
                 s.Send(Encoding.UTF8.GetBytes(message));
 
-                return Encoding.UTF8.GetString(s.Receive());
+                //return Encoding.UTF8.GetString(s.Receive());
+                return ApiSchema.Helpers.DeserializeObject(s.Receive());
             }
         }
     }

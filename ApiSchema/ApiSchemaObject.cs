@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ApiSchema
 {
-    public class ApiSchemaObject
+    [Serializable]
+    public class ApiObject
     {
     }
 }

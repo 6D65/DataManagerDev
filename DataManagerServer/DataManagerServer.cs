@@ -10,18 +10,55 @@ using ApiSchema.v1;
 using NNanomsg.Protocols;
 using NNanomsg;
 using Configuration;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+using System.IO.Compression;
+using ApiSchema;
 
 namespace TestMonkeys.DataManager
 {
     class DataManagerServer
     {
-        private static string DBName { get { return "DataManager"; } }
+        private static string DatabaseName = "DataManager";
 
         static void Main(string[] args)
         {
+            //TestBinaryFormatting();
+            Listen(Config.Instance.DataManagerServer);
+        }
+
+
+        public static void TestBinaryFormatting()
+        {
+            var initialCompany = new Company { Address="Serialize Address", Id=21213123, Name="SerializeName" };
+            byte[] result = null;
+            Company resultCompany = null;
+
+            using (var ms = new MemoryStream())
+            {
+                var form = new BinaryFormatter();
+                form.Serialize(ms, initialCompany);
+                ms.Position = 0;
+                result = ms.ToArray();
+            }
+
+
+            using (var ms = new MemoryStream(result))
+            {
+                var form = new BinaryFormatter();
+                resultCompany = (Company)form.Deserialize(ms);
+            }
+            
+        }
+
+
+        public static void Listen(string endpoint)
+        {
+            Company pc = new Company { Name = "Company Hello from the DataManagerServer", Address="Address", Id=1};
+
             using (var rep = new ReplySocket())
             {
-                rep.Bind(Config.Instance.DataManagerServer);
+                rep.Bind(endpoint);
 
                 var listener = new NanomsgListener();
                 listener.AddSocket(rep);
@@ -29,18 +66,12 @@ namespace TestMonkeys.DataManager
                 {
                     Console.WriteLine("Message from CLIENT: " + Encoding.UTF8.GetString(rep.Receive()));
                     const string response = "Hello from the DataManagerServer";
-                    rep.Send(Encoding.UTF8.GetBytes(response));
+                    byte[] responseBytes = Helpers.SerializeObject<Company>(pc);
+                    rep.Send(responseBytes);
                 };
 
                 listener.Listen(null);
-                //s.
             }
-
-            //BlobCache.ApplicationName = DBName;
-            //BlobCache.LocalMachine.getall
-
-            //var allCompanies = GetAllObjectsAsync();
-            //Task.WaitAll(allCompanies);
         }
 
         public static void CreateABunchOfStuff()
